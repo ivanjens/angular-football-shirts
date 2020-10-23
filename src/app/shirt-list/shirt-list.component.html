@@ -1,11 +1,16 @@
 <div class='col-12 row mt-4'>
-    <div *ngFor='let shirt of shirts' class='col-3'>
+    <div *ngFor='let shirt of shirts' class='col-3 text-center'>
         <img [src]='shirt.image' [alt]='shirt.team' class="shirt-size img-thumbnail">
-        <p *ngIf='shirt.stock==0' class="text-center text-uppercase mt-1 mb-1" role="alert"><span class="badge badge-danger">Sin stock</span></p>
-        <h6 class='text-center mt-0 mb-0'>{{shirt.team}}</h6>
-        <p class='text-center mb-0'>{{shirt.type}}</p>
-        <p class='text-center mb-0'>Season <span class="font-weight-italic">{{shirt.season}}</span></p>
+        <p *ngIf='shirt.stock==0' class="text-uppercase mt-1 mb-1" role="alert"><span class="badge badge-danger">Sin stock</span></p>
+        <h6 class='mt-0 mb-0'>{{shirt.team}}</h6>
+        <p class='mb-0'>{{shirt.type}}</p>
+        <p class='mb-0'>Season <span class="font-weight-italic">{{shirt.season}}</span></p>
         
-        <p class='text-center text-success'>{{shirt.price | currency}}</p>
+        <p class='text-success mb-2'>{{shirt.price | currency}}</p>
+        <div class="col-12 row justify-content-center mb-3">
+            <button class='btn btn-dark btn-sm col-3 text-center' (click)='downQuantity(shirt)'>-</button>
+            <input type="text" class='quantity-input text-center ml-1 mr-1' [(ngModel)]='shirt.quantity' (keyup)='setQuantity($event, shirt)'>
+            <button class='btn btn-dark btn-sm col-3 text-center' (click)='upQuantity(shirt)'>+</button>
+        </div>
     </div>
 </div>
