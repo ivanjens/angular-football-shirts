@@ -9,7 +9,7 @@
         <p class='text-success mb-2'>{{shirt.price | currency}}</p>
         <div class="col-12 row justify-content-center mb-3">
             <button class='btn btn-dark btn-sm col-3 text-center' (click)='downQuantity(shirt)'>-</button>
-            <input type="text" class='quantity-input text-center ml-1 mr-1' [(ngModel)]='shirt.quantity' (keyup)='setQuantity($event, shirt)'>
+            <input type="text" class='quantity-input text-center' [(ngModel)]='shirt.quantity' (keyup)='setQuantity($event, shirt)'>
             <button class='btn btn-dark btn-sm col-3 text-center' (click)='upQuantity(shirt)'>+</button>
         </div>
     </div>
