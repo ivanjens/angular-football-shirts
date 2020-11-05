@@ -7,10 +7,6 @@
         <p class='mb-0'>Season <span class="font-weight-italic">{{shirt.season}}</span></p>
         
         <p class='text-success mb-2'>{{shirt.price | currency}}</p>
-        <div class="col-12 row justify-content-center mb-3">
-            <button class='btn btn-dark btn-sm col-3 text-center' (click)='downQuantity(shirt)'>-</button>
-            <input type="text" class='quantity-input text-center' [(ngModel)]='shirt.quantity' (keyup)='setQuantity($event, shirt)'>
-            <button class='btn btn-dark btn-sm col-3 text-center' (click)='upQuantity(shirt)'>+</button>
-        </div>
+
     </div>
 </div>
