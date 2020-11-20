@@ -1,12 +1,13 @@
 <div class='col-12 row mt-4'>
     <div *ngFor='let shirt of shirts' class='col-3 text-center'>
         <img [src]='shirt.image' [alt]='shirt.team' class="shirt-size img-thumbnail">
-        <p *ngIf='shirt.stock==0' class="text-uppercase mt-1 mb-1" role="alert"><span class="badge badge-danger">Sin stock</span></p>
+        <p *ngIf='shirt.stock<=0' class="text-uppercase mt-1 mb-1" role="alert"><span class="badge badge-danger">Sin stock</span></p>
         <h6 class='mt-0 mb-0'>{{shirt.team}}</h6>
         <p class='mb-0'>{{shirt.type}}</p>
         <p class='mb-0'>Season <span class="font-weight-italic">{{shirt.season}}</span></p>
         
         <p class='text-success mb-2'>{{shirt.price | currency}}</p>
-
+        <app-input-integer [(quantity)]='shirt.quantity' [max]='shirt.stock' [min]='0' *ngIf='shirt.stock>0'></app-input-integer>
+        {{shirt.quantity}}
     </div>
 </div>

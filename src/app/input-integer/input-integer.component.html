@@ -1,7 +1,7 @@
 <div class="col-12 row justify-content-center mb-3">
-    <button class='btn btn-dark btn-sm col-3 text-center' (click)='downQuantity(shirt)'>-</button>
-    <input type="text" class='quantity-input text-center' [(ngModel)]='shirt.quantity' (keyup)='setQuantity($event, shirt)'>
-    <button class='btn btn-dark btn-sm col-3 text-center' (click)='upQuantity(shirt)'>+</button>
+    <button class='btn btn-dark btn-sm col-3 text-center' (click)='downQuantity()'>-</button>
+    <input type="text" class='quantity-input text-center' [(ngModel)]='quantity' (keyup)='setQuantity($event)'>
+    <button class='btn btn-dark btn-sm col-3 text-center' (click)='upQuantity()'>+</button>
 </div>
 
 
