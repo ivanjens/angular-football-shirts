@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShirtCartService } from '../shirt-cart.service';
 import { Shirt } from './Shirt';
 
 @Component({
@@ -55,11 +56,17 @@ export class ShirtListComponent implements OnInit {
       quantity: 0,
     },
   ];
-  
 
-  constructor() { }
+  constructor(private cart: ShirtCartService) { 
+  }
 
   ngOnInit(): void {
+  }
+
+  addToCart(shirt) : void{
+    this.cart.addToCart(shirt);
+    shirt.stock -= shirt.quantity;
+    shirt.quantity = 0;
   }
 
 }

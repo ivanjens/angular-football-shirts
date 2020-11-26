@@ -1,1 +1,7 @@
 <h4>Carrito</h4>
+
+<ul>
+    <li *ngFor='let shirt of cartList$ | async'>
+        {{shirt.team}} {{ shirt.type}} {{ shirt.season }} x {{shirt.quantity}}
+    </li>
+</ul>
