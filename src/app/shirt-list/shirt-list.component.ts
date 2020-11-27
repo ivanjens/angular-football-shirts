@@ -63,6 +63,7 @@ export class ShirtListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // añade una camiseta al carrito
   addToCart(shirt) : void{
     this.cart.addToCart(shirt);
     shirt.stock -= shirt.quantity;

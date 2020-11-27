@@ -20,6 +20,7 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // muestra un alert con el error recibido por parametro
   showError(msg): void{
     alert(msg);
   }

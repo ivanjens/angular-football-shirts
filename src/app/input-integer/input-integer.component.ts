@@ -25,6 +25,7 @@ export class InputIntegerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // aumenta el selector de numero en 1
   upQuantity() : void{
     if(this.quantity < this.max){
       this.quantity++;
@@ -32,6 +33,7 @@ export class InputIntegerComponent implements OnInit {
     }
   }
 
+  // decrementa el selector de numero en 1
   downQuantity() : void{
     if(this.quantity > this.min){
       this.quantity--;
@@ -39,6 +41,7 @@ export class InputIntegerComponent implements OnInit {
     }
   }
 
+  // establece el selector de numero en el minimo o máximo recibido
   setQuantity(event) : void{
     let validKey: boolean = this.validateKey(event.key);
     console.log(event.key);
@@ -49,11 +52,10 @@ export class InputIntegerComponent implements OnInit {
       } else if(this.quantity < this.min || this.quantity == NaN){
           this.quantity = 0;
       }
-      this.quantityChange.emit(this.quantity);
     } else {
       this.quantity = 0;
-      this.quantityChange.emit(this.quantity);
     }
+    this.quantityChange.emit(this.quantity);
   }
 
 
@@ -73,7 +75,7 @@ export class InputIntegerComponent implements OnInit {
       maxItemsQuantity = listOfKeys.length;
     }
     
-    /* Comprueba si la tecla presionada está dentro de las teclas permitidas para seleccionar el stock*/
+    /* Comprueba si la tecla presionada está dentro de las teclas permitidas para seleccionar el stock */
     for(let i = 0; i < maxItemsQuantity; i++){
       if((key == listOfNumbers[i] || key == listOfKeys[i]) && key != ' '){
         return true;
