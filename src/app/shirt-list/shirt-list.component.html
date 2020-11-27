@@ -1,4 +1,4 @@
-<div class='col-12 row mt-4 mb-2'>
+<div class='col-12 row mt-4 mb-2 border-right border-dark'>
     <div *ngFor='let shirt of shirts' class='col-3 text-center mb-3'>
         <img [src]='shirt.image' [alt]='shirt.team' class="shirt-size img-thumbnail">
         <p *ngIf='shirt.stock<=0' class="text-uppercase mt-1 mb-1" role="alert"><span class="badge badge-danger">Sin stock</span></p>

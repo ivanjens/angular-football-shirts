@@ -1,7 +1,16 @@
 <h4>Carrito</h4>
 
-<ul>
-    <li *ngFor='let shirt of cartList$ | async'>
-        {{shirt.team}} {{ shirt.type}} {{ shirt.season }} x {{shirt.quantity}}
-    </li>
-</ul>
+<div *ngIf='(cartList$ | async).length==0' class="alert alert-primary"  role="alert">
+    <p class='text-center text-uppercase h6'>No hay productos seleccionados</p>
+</div>
+
+
+<div class='row mb-2' *ngFor='let shirt of cartList$ | async'>
+    <img class='cart-image img-thumbnail' [src]='shirt.image' [alt]='shirt.team'>
+    <p class='mt-2 ml-2'>x {{shirt.quantity}} {{shirt.team}} {{ shirt.type}} temp. {{ shirt.season }}</p>
+</div>
+
+<div class='text-right'>
+    <button *ngIf='(cartList$ | async).length>0' class='btn btn-sm btn-success mt-0 text-uppercase' (click)='showError("Compras no disponibles por el momento")'>Comprar<i class="fas ml-2 fa-arrow-right"></i></button>
+</div>
+

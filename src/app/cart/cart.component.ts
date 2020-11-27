@@ -8,6 +8,7 @@ import { Shirt } from '../shirt-list/Shirt';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
+
 export class CartComponent implements OnInit {
 
   cartList$: Observable<Shirt[]>;
@@ -17,6 +18,10 @@ export class CartComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+
+  showError(msg): void{
+    alert(msg);
   }
 
 }
